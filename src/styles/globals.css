@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './animations.css';
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    
+    --primary: 24 85% 54%;
+    --primary-rgb: 234, 92, 43;
+    
+    --secondary: 45 90% 67%;
+    --secondary-rgb: 246, 216, 96;
+    
+    --accent: 92 52% 53%;
+    --accent-rgb: 149, 205, 65;
+    
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: var(--primary);
+    
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    
+    --primary: 24 100% 62%;
+    --primary-rgb: 255, 127, 63;
+    
+    --secondary: 45 100% 75%;
+    --secondary-rgb: 255, 229, 127;
+    
+    --accent: 92 58% 60%;
+    --accent-rgb: 168, 228, 77;
+    
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}

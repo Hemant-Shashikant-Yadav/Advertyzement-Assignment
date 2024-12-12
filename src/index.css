@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: var(--cream);
+    --foreground: var(--dark);
+    
+    --card: var(--cream);
+    --card-foreground: var(--dark);
+    
+    --popover: var(--cream);
+    --popover-foreground: var(--dark);
+    
+    --primary: var(--orange);
+    --primary-foreground: var(--cream);
+    
+    --secondary: var(--sage);
+    --secondary-foreground: var(--dark);
+    
+    --muted: var(--sage);
+    --muted-foreground: var(--teal);
+    
+    --accent: var(--teal);
+    --accent-foreground: var(--cream);
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: var(--cream);
+
+    --border: var(--sage);
+    --input: var(--sage);
+    --ring: var(--orange);
+    --radius: 0.75rem;
+
+    /* Custom color variables */
+    --orange: 205, 92, 8;
+    --cream: 255, 245, 228;
+    --sage: 193, 216, 195;
+    --teal: 106, 156, 137;
+    --dark: 20, 14.3%, 4.1%;
+  }
+
+  .dark {
+    --background: var(--dark);
+    --foreground: var(--cream);
+    
+    --card: var(--dark);
+    --card-foreground: var(--cream);
+    
+    --popover: var(--dark);
+    --popover-foreground: var(--cream);
+    
+    --primary: var(--orange);
+    --primary-foreground: var(--cream);
+    
+    --secondary: var(--teal);
+    --secondary-foreground: var(--cream);
+    
+    --muted: var(--teal);
+    --muted-foreground: var(--sage);
+    
+    --accent: var(--teal);
+    --accent-foreground: var(--cream);
+    
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: var(--cream);
+    
+    --border: var(--teal);
+    --input: var(--teal);
+    --ring: var(--orange);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes wave {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-wave {
+  animation: wave 2s infinite;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(var(--primary) / 0.1),
+    transparent
+  );
+}
