@@ -1,7 +1,7 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Product } from '@/types';
-import { Package, Factory, AlertTriangle } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Product } from "@/types";
+import { Package, AlertTriangle } from "lucide-react";
 
 interface ProductInfoProps {
   product: Product;
@@ -17,7 +17,7 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
         <CardContent>
           <div className="aspect-square relative mb-6 rounded-lg overflow-hidden">
             <img
-              src={product.image_url || 'https://via.placeholder.com/400'}
+              src={product.image_url || "https://via.placeholder.com/400"}
               alt={product.product_name}
               className="object-contain w-full h-full"
             />
@@ -48,9 +48,11 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
 
             {product.categories && (
               <div>
-                <h3 className="text-sm font-medium text-gray-500">Categories</h3>
+                <h3 className="text-sm font-medium text-gray-500">
+                  Categories
+                </h3>
                 <div className="mt-1 flex flex-wrap gap-2">
-                  {product.categories.split(',').map((category) => (
+                  {product.categories.split(",").map((category) => (
                     <Badge key={category} variant="secondary">
                       {category.trim()}
                     </Badge>
@@ -63,7 +65,7 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
               <div>
                 <h3 className="text-sm font-medium text-gray-500">Labels</h3>
                 <div className="mt-1 flex flex-wrap gap-2">
-                  {product.labels.split(',').map((label) => (
+                  {product.labels.split(",").map((label) => (
                     <Badge key={label} variant="outline">
                       {label.trim()}
                     </Badge>
@@ -92,7 +94,9 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
 
           {product.manufacturing_places && (
             <div>
-              <h3 className="text-sm font-medium text-gray-500">Manufacturing Places</h3>
+              <h3 className="text-sm font-medium text-gray-500">
+                Manufacturing Places
+              </h3>
               <p className="mt-1">{product.manufacturing_places}</p>
             </div>
           )}

@@ -13,10 +13,10 @@ export const palette = {
     dark: '#E6C441',
   },
   accent: {
-    DEFAULT: '#95CD41',
-    rgb: '149, 205, 65',
-    light: '#A8E44D',
-    dark: '#82B935',
+    DEFAULT: '#cd6241',
+    rgb: '205, 98, 65',
+    light: '#e86e48',
+    dark: '#a14c32',
   },
   neutral: {
     50: '#F9FAFB',

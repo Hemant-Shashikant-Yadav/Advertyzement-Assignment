@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom';
-import { Card, CardContent } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Skeleton } from '@/components/ui/skeleton';
-import { Product } from '@/types';
+import { Link } from "react-router-dom";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Skeleton } from "@/components/ui/skeleton";
+import { Product } from "@/types";
 
 interface ProductGridProps {
   products: Product[];
@@ -14,10 +14,13 @@ const ProductGrid = ({ products, loading }: ProductGridProps) => {
     return (
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {[...Array(8)].map((_, i) => (
-          <Card key={i} className="overflow-hidden group hover:shadow-lg transition-all duration-300">
+          <Card
+            key={i}
+            className="overflow-hidden group hover:shadow-lg transition-all duration-300"
+          >
             <div className="relative">
               <Skeleton className="h-48 w-full" />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="absolute inset-0  from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
             <CardContent className="p-4 space-y-2">
               <Skeleton className="h-4 w-3/4" />
@@ -36,9 +39,12 @@ const ProductGrid = ({ products, loading }: ProductGridProps) => {
           <Card className="overflow-hidden group hover:shadow-lg transition-all duration-300">
             <div className="aspect-square relative">
               <img
-                src={product.image_url || 'https://images.unsplash.com/photo-1635321593217-40050ad13c74?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3'}
+                src={
+                  product.image_url ||
+                  "https://images.unsplash.com/photo-1635321593217-40050ad13c74?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+                }
                 alt={product.product_name}
-                className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+                className="object-contain w-full h-full group-hover:scale-105 transition-transform duration-300"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               {product.nutrition_grade_fr && (
@@ -55,10 +61,11 @@ const ProductGrid = ({ products, loading }: ProductGridProps) => {
                 {product.product_name}
               </h3>
               <p className="text-sm text-muted-foreground mb-2">
-                {product.categories?.split(',')[0] || 'Uncategorized'}
+                {product.categories?.split(",")[0] || "Uncategorized"}
               </p>
               <p className="text-sm text-muted-foreground line-clamp-2">
-                {product.ingredients_text || 'No ingredients information available'}
+                {product.ingredients_text ||
+                  "No ingredients information available"}
               </p>
             </CardContent>
           </Card>

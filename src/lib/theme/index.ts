@@ -11,14 +11,5 @@ export const theme = {
     'muted-foreground': palette.neutral[500],
     border: palette.neutral[200],
   },
-  dark: {
-    background: palette.neutral[900],
-    foreground: palette.neutral[50],
-    primary: palette.primary.light,
-    secondary: palette.secondary.light,
-    accent: palette.accent.light,
-    muted: palette.neutral[800],
-    'muted-foreground': palette.neutral[400],
-    border: palette.neutral[700],
-  },
+
 } as const;

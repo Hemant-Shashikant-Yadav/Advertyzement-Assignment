@@ -1,18 +1,17 @@
-import { useState } from 'react';
-import { useProducts } from '@/hooks/useProducts';
-import ProductGrid from '@/components/ProductGrid';
-import PageHeader from '@/components/PageHeader';
-import SearchBar from '@/components/SearchBar';
-import FilterBar from '@/components/FilterBar';
-import LoadingSpinner from '@/components/loading-spinner';
-import ErrorMessage from '@/components/error-message';
+import { useState } from "react";
+import { useProducts } from "@/hooks/useProducts";
+import ProductGrid from "@/components/ProductGrid";
+import PageHeader from "@/components/PageHeader";
+import SearchBar from "@/components/SearchBar";
+import FilterBar from "@/components/FilterBar";
+import LoadingSpinner from "@/components/loading-spinner";
+import ErrorMessage from "@/components/error-message";
 
 const ProductListPage = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [sortOption, setSortOption] = useState("name-asc");
 
-  const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('all');
-  const [sortOption, setSortOption] = useState('name-asc');
-  
   const { products, loading, error, loadMore, hasMore } = useProducts({
     searchQuery,
     category: selectedCategory,
@@ -44,7 +43,7 @@ const ProductListPage = () => {
               <div className="text-center mt-8">
                 <button
                   onClick={loadMore}
-                  className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2"
+                  className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-orange-400 hover:text-accent-foreground h-10 px-4 py-2"
                 >
                   Load More Products
                 </button>
@@ -55,6 +54,6 @@ const ProductListPage = () => {
       </main>
     </div>
   );
-}
+};
 
 export default ProductListPage;

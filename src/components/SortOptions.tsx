@@ -4,7 +4,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
+} from "@/components/ui/select";
 
 interface SortOptionsProps {
   sortOption: string;
@@ -12,10 +12,10 @@ interface SortOptionsProps {
 }
 
 const sortOptions = [
-  { value: 'name-asc', label: 'Name (A-Z)' },
-  { value: 'name-desc', label: 'Name (Z-A)' },
-  { value: 'grade-asc', label: 'Nutrition Grade (Best)' },
-  { value: 'grade-desc', label: 'Nutrition Grade (Worst)' },
+  { value: "name-asc", label: "Name (A-Z)" },
+  { value: "name-desc", label: "Name (Z-A)" },
+  { value: "grade-asc", label: "Nutrition Grade (Best)" },
+  { value: "grade-desc", label: "Nutrition Grade (Worst)" },
 ];
 
 const SortOptions = ({ sortOption, onSortChange }: SortOptionsProps) => {
@@ -24,7 +24,7 @@ const SortOptions = ({ sortOption, onSortChange }: SortOptionsProps) => {
       <SelectTrigger className="w-[200px]">
         <SelectValue placeholder="Sort by" />
       </SelectTrigger>
-      <SelectContent>
+      <SelectContent className="bg-white">
         {sortOptions.map((option) => (
           <SelectItem key={option.value} value={option.value}>
             {option.label}
